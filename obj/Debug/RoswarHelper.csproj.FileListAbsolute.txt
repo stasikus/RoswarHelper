@@ -1,0 +1,9 @@
+c:\users\s.o.kravchenko\documents\visual studio 2012\Projects\RoswarHelper\RoswarHelper\bin\Debug\RoswarHelper.exe.config
+c:\users\s.o.kravchenko\documents\visual studio 2012\Projects\RoswarHelper\RoswarHelper\bin\Debug\RoswarHelper.exe
+c:\users\s.o.kravchenko\documents\visual studio 2012\Projects\RoswarHelper\RoswarHelper\bin\Debug\RoswarHelper.pdb
+c:\users\s.o.kravchenko\documents\visual studio 2012\Projects\RoswarHelper\RoswarHelper\obj\Debug\RoswarHelper.csprojResolveAssemblyReference.cache
+c:\users\s.o.kravchenko\documents\visual studio 2012\Projects\RoswarHelper\RoswarHelper\obj\Debug\RoswarHelper.Form1.resources
+c:\users\s.o.kravchenko\documents\visual studio 2012\Projects\RoswarHelper\RoswarHelper\obj\Debug\RoswarHelper.Properties.Resources.resources
+c:\users\s.o.kravchenko\documents\visual studio 2012\Projects\RoswarHelper\RoswarHelper\obj\Debug\RoswarHelper.csproj.GenerateResource.Cache
+c:\users\s.o.kravchenko\documents\visual studio 2012\Projects\RoswarHelper\RoswarHelper\obj\Debug\RoswarHelper.exe
+c:\users\s.o.kravchenko\documents\visual studio 2012\Projects\RoswarHelper\RoswarHelper\obj\Debug\RoswarHelper.pdb
