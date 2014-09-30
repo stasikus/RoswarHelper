@@ -52,6 +52,7 @@
             this.usersList.Name = "usersList";
             this.usersList.Size = new System.Drawing.Size(158, 355);
             this.usersList.TabIndex = 1;
+            this.usersList.SelectedIndexChanged += new System.EventHandler(this.usersList_SelectedIndexChanged);
             // 
             // groupBox
             // 

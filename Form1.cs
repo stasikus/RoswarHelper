@@ -57,6 +57,8 @@ namespace RoswarHelper
                 for (int i = 0; i < LoadList.userDictionary.Count; i++)
                 {
                     usersList.Items.Add(LoadList.userDictionary.ElementAt(i).Key);
+                    Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value);
+                    Thread.Sleep(10);
                 }
 
             }
@@ -64,6 +66,11 @@ namespace RoswarHelper
             {
                 MessageBox.Show("Файл не загружен - что-то пошло не так...");
             }
+        }
+
+        private void usersList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Main.selectedAcc(usersList.SelectedIndex.ToString());
         }
 
         
