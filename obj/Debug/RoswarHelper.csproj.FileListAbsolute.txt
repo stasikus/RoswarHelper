@@ -16,3 +16,12 @@ D:\Git\RoswarHelper\obj\Debug\RoswarHelper.csprojResolveAssemblyReference.cache
 D:\Git\RoswarHelper\obj\Debug\RoswarHelper.Form1.resources
 D:\Git\RoswarHelper\obj\Debug\RoswarHelper.Properties.Resources.resources
 D:\Git\RoswarHelper\obj\Debug\RoswarHelper.csproj.GenerateResource.Cache
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswarHelper\bin\Debug\RoswarHelper.exe.config
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswarHelper\obj\Debug\RoswarHelper.exe
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswarHelper\obj\Debug\RoswarHelper.pdb
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswarHelper\bin\Debug\RoswarHelper.exe
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswarHelper\bin\Debug\RoswarHelper.pdb
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswarHelper\obj\Debug\RoswarHelper.csprojResolveAssemblyReference.cache
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswarHelper\obj\Debug\RoswarHelper.Form1.resources
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswarHelper\obj\Debug\RoswarHelper.Properties.Resources.resources
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswarHelper\obj\Debug\RoswarHelper.csproj.GenerateResource.Cache

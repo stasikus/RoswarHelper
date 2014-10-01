@@ -18,8 +18,6 @@ namespace RoswarHelper
             InitializeComponent();
         }
 
-        public static Dictionary<int, int> webBrowsersDic = new Dictionary<int, int>();
-
 
         private DialogResult STAShowDialog(FileDialog dialog)
         {
@@ -54,11 +52,17 @@ namespace RoswarHelper
                     LoadList.loadUsersList(path);
                 }
 
+                Application.DoEvents();
+
                 for (int i = 0; i < LoadList.userDictionary.Count; i++)
                 {
                     usersList.Items.Add(LoadList.userDictionary.ElementAt(i).Key);
                     Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value);
-                    Thread.Sleep(10);
+                    //Thread th = new Thread(() => Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value));
+                    //th.IsBackground = true;
+                    //th.SetApartmentState(ApartmentState.MTA);
+                    //th.Start();
+                    Thread.Sleep(1000);
                 }
 
             }
@@ -70,7 +74,12 @@ namespace RoswarHelper
 
         private void usersList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Main.selectedAcc(usersList.SelectedIndex.ToString());
+            Main.selectedAcc(usersList.SelectedIndex);
+        }
+
+        private void testBtn_Click(object sender, EventArgs e)
+        {
+            Main.goTo(usersList.SelectedIndex);
         }
 
         
