@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,9 +13,18 @@ namespace RoswarHelper
     public class Main
     {
         private static Dictionary<int, WebBrowser> webBrowsersDic = new Dictionary<int, WebBrowser>();
+        //public static Form1 form1 = new Form1();
 
-        public static void mainWork(int userIndex, string login, string pass)
+        public static void mainWork(int userIndex, string login, string pass, string prFromLists)
         {
+            //string key = "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings"; //установка прокси
+            //string port = "80"; 
+            //string proxy = prFromLists + ":" + port;
+            //RegistryKey RegKey = Registry.CurrentUser.OpenSubKey(key, true);
+            //RegKey.SetValue("ProxyServer", proxy);
+            //RegKey.SetValue("ProxyEnable", 1);
+            //waitMht(1);
+
             WebBrowser webBrowser = new WebBrowser();
             webBrowser.ScriptErrorsSuppressed = true;
             webBrowser.Navigate("http://www.roswar.ru");
@@ -45,13 +55,21 @@ namespace RoswarHelper
         public static void goTo(int index)
         {
             WebBrowser wb = webBrowsersDic[index];
-
-            //string response = wb.DocumentText;
-            //StreamWriter sw = new StreamWriter("F:\\3.txt", true, System.Text.Encoding.UTF8);
-            //sw.WriteLine(response);
-            //sw.Close();
+            
+            string response = wb.DocumentText;
+            StreamWriter sw = new StreamWriter("D:\\1\\1.txt", true, System.Text.Encoding.UTF8);
+            sw.WriteLine(response);
+            sw.Close();
 
             MessageBox.Show(wb.Handle +" "+ wb.Url.ToString());
+        }
+
+        public static void showInfo()
+        {
+            //form1.BeginInvoke((Action)delegate
+            //{
+            //    //totalMessage_lbl.Text = (i + 1).ToString();
+            //});
         }
 
         public static void waitMht(int sec) //wait for complite load page
