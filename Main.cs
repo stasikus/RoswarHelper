@@ -15,16 +15,8 @@ namespace RoswarHelper
         private static Dictionary<int, WebBrowser> webBrowsersDic = new Dictionary<int, WebBrowser>();
         //public static Form1 form1 = new Form1();
 
-        public static void mainWork(int userIndex, string login, string pass, string prFromLists)
+        public static void mainWork(int userIndex, string login, string pass)
         {
-            //string key = "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings"; //установка прокси
-            //string port = "80"; 
-            //string proxy = prFromLists + ":" + port;
-            //RegistryKey RegKey = Registry.CurrentUser.OpenSubKey(key, true);
-            //RegKey.SetValue("ProxyServer", proxy);
-            //RegKey.SetValue("ProxyEnable", 1);
-            //waitMht(1);
-
             WebBrowser webBrowser = new WebBrowser();
             webBrowser.ScriptErrorsSuppressed = true;
             webBrowser.Navigate("http://www.roswar.ru");

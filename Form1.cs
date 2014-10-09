@@ -57,9 +57,8 @@ namespace RoswarHelper
 
                 for (int i = 0; i < LoadList.userDictionary.Count; i++)
                 {
-                    string proxy = proxyListBox.Items[i].ToString();
                     usersList.Items.Add(LoadList.userDictionary.ElementAt(i).Key);
-                    Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value, proxy);
+                    Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value);
                     //Thread th = new Thread(() => Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value));
                     //th.IsBackground = true;
                     //th.SetApartmentState(ApartmentState.MTA);
