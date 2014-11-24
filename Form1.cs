@@ -58,7 +58,7 @@ namespace RoswarHelper
                 for (int i = 0; i < LoadList.userDictionary.Count; i++)
                 {
                     usersList.Items.Add(LoadList.userDictionary.ElementAt(i).Key);
-                    Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value);
+                    Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value, textBox1);
                     //Thread th = new Thread(() => Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value));
                     //th.IsBackground = true;
                     //th.SetApartmentState(ApartmentState.MTA);
@@ -81,6 +81,16 @@ namespace RoswarHelper
         private void testBtn_Click(object sender, EventArgs e)
         {
             Main.goTo(usersList.SelectedIndex);
+        }
+
+        private void spendGold_25_Click(object sender, EventArgs e)
+        {
+            Main.spendGold(usersList.SelectedIndex, 0);
+        }
+
+        private void spendGold_75_Click(object sender, EventArgs e)
+        {
+            Main.spendGold(usersList.SelectedIndex, 1);
         }
 
         

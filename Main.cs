@@ -7,61 +7,37 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using xNet.Net;
 
 namespace RoswarHelper
 {
     public class Main
     {
-        private static Dictionary<int, WebBrowser> webBrowsersDic = new Dictionary<int, WebBrowser>();
-        //public static Form1 form1 = new Form1();
+        public static HttpRequest req;
 
-        public static void mainWork(int userIndex, string login, string pass)
+        public static void mainWork(int userIndex, string login, string pass, TextBox textBox1)
         {
-            WebBrowser webBrowser = new WebBrowser();
-            webBrowser.ScriptErrorsSuppressed = true;
-            webBrowser.Navigate("http://www.roswar.ru");
-            waitMht(1);
-            webBrowser.Document.GetElementById("email-input").SetAttribute("value", login);
-            webBrowser.Document.GetElementById("pwd-input").SetAttribute("value", pass);
-
-            foreach (HtmlElement el in webBrowser.Document.GetElementsByTagName("button"))
-            {
-                if (el.GetAttribute("type").Equals("submit"))
-                {
-                    el.InvokeMember("click");
-                    break;
-                }
-            }
-            waitMht(1);
-
-            webBrowsersDic.Add(userIndex, webBrowser);
-            Thread.Sleep(10);
+            req = Requests.Auth(login, pass, textBox1);
+            //MessageBox.Show(acc.ToString());
         }
 
         public static void selectedAcc(int index)
         {
-            WebBrowser wb = webBrowsersDic[index];
-            MessageBox.Show(wb.Handle.ToString());
         }
 
         public static void goTo(int index)
         {
-            WebBrowser wb = webBrowsersDic[index];
-            
-            string response = wb.DocumentText;
-            StreamWriter sw = new StreamWriter("D:\\1\\1.txt", true, System.Text.Encoding.UTF8);
-            sw.WriteLine(response);
-            sw.Close();
+            Requests.restoreHP(req);
+        }
 
-            MessageBox.Show(wb.Handle +" "+ wb.Url.ToString());
+        public static void spendGold(int index, int spendType)
+        {
+            int goldLeft = Requests.spendGold(req, spendType);
+            MessageBox.Show(goldLeft.ToString());
         }
 
         public static void showInfo()
         {
-            //form1.BeginInvoke((Action)delegate
-            //{
-            //    //totalMessage_lbl.Text = (i + 1).ToString();
-            //});
         }
 
         public static void waitMht(int sec) //wait for complite load page

@@ -31,6 +31,7 @@
             this.loadListBtn = new System.Windows.Forms.Button();
             this.usersList = new System.Windows.Forms.ListBox();
             this.groupBox = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.await_label = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.coint_label = new System.Windows.Forms.Label();
@@ -38,6 +39,8 @@
             this.name_label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.testBtn = new System.Windows.Forms.Button();
+            this.spendGold_75 = new System.Windows.Forms.Button();
+            this.spendGold_25 = new System.Windows.Forms.Button();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +65,9 @@
             // 
             // groupBox
             // 
+            this.groupBox.Controls.Add(this.spendGold_25);
+            this.groupBox.Controls.Add(this.spendGold_75);
+            this.groupBox.Controls.Add(this.textBox1);
             this.groupBox.Controls.Add(this.await_label);
             this.groupBox.Controls.Add(this.label3);
             this.groupBox.Controls.Add(this.coint_label);
@@ -75,6 +81,14 @@
             this.groupBox.TabIndex = 2;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Info";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(133, 18);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(254, 289);
+            this.textBox1.TabIndex = 7;
             // 
             // await_label
             // 
@@ -129,13 +143,33 @@
             // 
             // testBtn
             // 
-            this.testBtn.Location = new System.Drawing.Point(9, 109);
+            this.testBtn.Location = new System.Drawing.Point(6, 98);
             this.testBtn.Name = "testBtn";
             this.testBtn.Size = new System.Drawing.Size(75, 23);
             this.testBtn.TabIndex = 0;
-            this.testBtn.Text = "test";
+            this.testBtn.Text = "test (Heal)";
             this.testBtn.UseVisualStyleBackColor = true;
             this.testBtn.Click += new System.EventHandler(this.testBtn_Click);
+            // 
+            // spendGold_75
+            // 
+            this.spendGold_75.Location = new System.Drawing.Point(6, 157);
+            this.spendGold_75.Name = "spendGold_75";
+            this.spendGold_75.Size = new System.Drawing.Size(121, 23);
+            this.spendGold_75.TabIndex = 8;
+            this.spendGold_75.Text = "Тратить золото (75)";
+            this.spendGold_75.UseVisualStyleBackColor = true;
+            this.spendGold_75.Click += new System.EventHandler(this.spendGold_75_Click);
+            // 
+            // spendGold_25
+            // 
+            this.spendGold_25.Location = new System.Drawing.Point(6, 128);
+            this.spendGold_25.Name = "spendGold_25";
+            this.spendGold_25.Size = new System.Drawing.Size(121, 23);
+            this.spendGold_25.TabIndex = 9;
+            this.spendGold_25.Text = "Тратить золото (25)";
+            this.spendGold_25.UseVisualStyleBackColor = true;
+            this.spendGold_25.Click += new System.EventHandler(this.spendGold_25_Click);
             // 
             // Form1
             // 
@@ -164,6 +198,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label name_label;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button spendGold_25;
+        private System.Windows.Forms.Button spendGold_75;
     }
 }
 
