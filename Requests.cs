@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -32,20 +33,30 @@ namespace RoswarHelper
             sw.Write(post);
             sw.Close();
         }
+
         public static int spendGold(HttpRequest request, int playType)
         {
-            int goldLefet = 0;
+            int goldLeft = 0;
             request.AddHeader("X-Requested-With", "XMLHttpRequest");
-            string post = request.Post("http://www.roswar.ru/camp/gypsy/", "action=gypsyStart&gametype=0", "application/x-www-form-urlencoded").ToString();
+            request.Post("http://www.roswar.ru/camp/gypsy/", "action=gypsyStart&gametype="+playType+"", "application/x-www-form-urlencoded");
             
             System.Threading.Thread.Sleep(500);
 
             request.AddHeader("X-Requested-With", "XMLHttpRequest");
-            string post1 = request.Post("http://www.roswar.ru/camp/gypsy/", "action=gypsyAuto", "application/x-www-form-urlencoded").ToString();
+            string post = request.Post("http://www.roswar.ru/camp/gypsy/", "action=gypsyAuto", "application/x-www-form-urlencoded").ToString();
+
+            JObject goldLeftjObject = JObject.Parse(post);
+
+            //StreamWriter sw = new StreamWriter("D:\\1\\1\\gol.txt", true, System.Text.Encoding.GetEncoding(1251));
+            //sw.Write(goldLeftjObject);
+            //sw.Close();
+
+            goldLeft = Convert.ToInt32(goldLeftjObject["gold"]);
 
             System.Threading.Thread.Sleep(1000);
 
-            return goldLefet;
+            return goldLeft;
         }
+
     }
 }

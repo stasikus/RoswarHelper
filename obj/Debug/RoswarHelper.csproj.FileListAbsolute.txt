@@ -26,3 +26,5 @@ C:\Users\s.o.kravchenko\Documents\GitHub\RoswarHelper\obj\Debug\RoswarHelper.For
 C:\Users\s.o.kravchenko\Documents\GitHub\RoswarHelper\obj\Debug\RoswarHelper.Properties.Resources.resources
 C:\Users\s.o.kravchenko\Documents\GitHub\RoswarHelper\obj\Debug\RoswarHelper.csproj.GenerateResource.Cache
 D:\Git\RoswarHelper\bin\Debug\xNet.dll
+D:\Git\RoswarHelper\bin\Debug\Newtonsoft.Json.dll
+D:\Git\RoswarHelper\bin\Debug\Newtonsoft.Json.xml

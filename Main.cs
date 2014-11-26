@@ -28,8 +28,26 @@ namespace RoswarHelper
         }
         public static void spendGold(int index, int spendType)
         {
-            int goldLeft = Requests.spendGold(req, spendType);
-            MessageBox.Show(goldLeft.ToString());
+            int goldLeft = 0;
+
+            goldLeft = Requests.spendGold(req, spendType);
+
+            if(spendType == 0)
+            {
+                while (goldLeft > 25)
+                    goldLeft = Requests.spendGold(req, spendType);
+            }
+            else if (spendType == 1)
+            {
+                while (goldLeft > 75)
+                    goldLeft = Requests.spendGold(req, spendType);
+            }
+            else
+            {
+                MessageBox.Show("Не смеши людей, у тебя нет золота");
+            }
+
+            MessageBox.Show("Трата золота окончена");
         }
         public static void showInfo()
         {
