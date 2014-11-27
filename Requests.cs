@@ -12,26 +12,27 @@ namespace RoswarHelper
 {
     class Requests
     {
-        public static HttpRequest Auth(string login, string pass, TextBox textBox1)
+        public static HttpRequest Auth(string login, string pass, string proxy)
         {
             var request = new HttpRequest();
+            request.Proxy = HttpProxyClient.Parse(proxy);
             request.UserAgent = HttpHelper.ChromeUserAgent();
             request.Cookies = new CookieDictionary();
-            string get = request.Get("http://www.roswar.ru/login/").ToString();
             string post = request.Post("http://www.roswar.ru/login/", "action=login&email=" + System.Web.HttpUtility.UrlEncode(login) + "&password=" + System.Web.HttpUtility.UrlEncode(pass, Encoding.GetEncoding(1251)) + "&remember=on", "application/x-www-form-urlencoded").ToString();
-            
-            StreamWriter sw = new StreamWriter("D:\\1\\1\\1.txt", true, System.Text.Encoding.GetEncoding(1251));
-            sw.Write(post);
-            sw.Close();
+
+            //StreamWriter sw = new StreamWriter("D:\\1\\1\\1_" + login + ".txt", true, System.Text.Encoding.GetEncoding(1251));
+            //sw.Write(post);
+            //sw.Close();
             return request;
         }
         public static void restoreHP(HttpRequest request)
         {
             request.AddField("X-Requested-With", "XMLHttpRequest");
             string post = request.Post("http://www.roswar.ru/player/restorehp/", "action=restorehp", "application/x-www-form-urlencoded").ToString();
-            StreamWriter sw = new StreamWriter("D:\\1\\1\\2.txt", true, System.Text.Encoding.GetEncoding(1251));
-            sw.Write(post);
-            sw.Close();
+            
+            //StreamWriter sw = new StreamWriter("D:\\1\\1\\2.txt", true, System.Text.Encoding.GetEncoding(1251));
+            //sw.Write(post);
+            //sw.Close();
         }
 
         public static int spendGold(HttpRequest request, int playType)

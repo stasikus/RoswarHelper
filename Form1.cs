@@ -18,7 +18,8 @@ namespace RoswarHelper
             InitializeComponent();
         }
 
-        public List<string> proxyList = new List<string>();
+        public List<string> proxyList = new List<string>() { "36.250.74.88:80", "221.176.14.72:80" };
+        
 
         private DialogResult STAShowDialog(FileDialog dialog)
         {
@@ -58,11 +59,11 @@ namespace RoswarHelper
                 for (int i = 0; i < LoadList.userDictionary.Count; i++)
                 {
                     usersList.Items.Add(LoadList.userDictionary.ElementAt(i).Key);
-                    Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value, textBox1);
-                    //Thread th = new Thread(() => Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value));
-                    //th.IsBackground = true;
-                    //th.SetApartmentState(ApartmentState.MTA);
-                    //th.Start();
+                    //Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value, textBox1);
+                    Thread th = new Thread(() => Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value, proxyList[i]));
+                    th.IsBackground = true;
+                    th.SetApartmentState(ApartmentState.MTA);
+                    th.Start();
                     Thread.Sleep(10);
                 }
 
