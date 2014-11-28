@@ -18,8 +18,8 @@ namespace RoswarHelper
             InitializeComponent();
         }
 
-        public List<string> proxyList = new List<string>() { "36.250.74.88:80", "221.176.14.72:80" };
-        
+        public List<string> proxyList = new List<string>() { "36.250.74.88:80" };
+        //"221.176.14.72:80"
 
         private DialogResult STAShowDialog(FileDialog dialog)
         {
@@ -35,8 +35,8 @@ namespace RoswarHelper
 
         private void loadListBtn_Click(object sender, EventArgs e)
         {
-            try
-            {
+          // 
+          //  {
                 String pathLocation = String.Empty;
                 OpenFileDialog frm = new OpenFileDialog();
                 frm.InitializeLifetimeService();
@@ -59,19 +59,19 @@ namespace RoswarHelper
                 for (int i = 0; i < LoadList.userDictionary.Count; i++)
                 {
                     usersList.Items.Add(LoadList.userDictionary.ElementAt(i).Key);
-                    //Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value, textBox1);
-                    Thread th = new Thread(() => Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value, proxyList[i]));
-                    th.IsBackground = true;
-                    th.SetApartmentState(ApartmentState.MTA);
-                    th.Start();
+                    Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value, proxyList[0]);
+                    //Thread th = new Thread(() => Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value, proxyList[i]));
+                    //th.IsBackground = true;
+                    //th.SetApartmentState(ApartmentState.MTA);
+                    //th.Start();
                     Thread.Sleep(10);
                 }
 
-            }
-            catch
-            {
-                MessageBox.Show("Файл не загружен - что-то пошло не так...");
-            }
+           // }
+          //  catch
+          //  {
+          //      MessageBox.Show("Файл не загружен - что-то пошло не так...");
+          //  }
         }
 
         private void usersList_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,6 +92,11 @@ namespace RoswarHelper
         private void spendGold_75_Click(object sender, EventArgs e)
         {
             Main.spendGold(usersList.SelectedIndex, 1);
+        }
+
+        private void patrol_btn_Click(object sender, EventArgs e)
+        {
+            Main.patrol(usersList.SelectedIndex, 40);
         }
 
         

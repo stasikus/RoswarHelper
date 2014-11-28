@@ -20,9 +20,10 @@ namespace RoswarHelper
             request.Cookies = new CookieDictionary();
             string post = request.Post("http://www.roswar.ru/login/", "action=login&email=" + System.Web.HttpUtility.UrlEncode(login) + "&password=" + System.Web.HttpUtility.UrlEncode(pass, Encoding.GetEncoding(1251)) + "&remember=on", "application/x-www-form-urlencoded").ToString();
 
-            //StreamWriter sw = new StreamWriter("D:\\1\\1\\1_" + login + ".txt", true, System.Text.Encoding.GetEncoding(1251));
-            //sw.Write(post);
-            //sw.Close();
+            StreamWriter sw = new StreamWriter("D:\\1\\1_" + login + ".txt", true, System.Text.Encoding.GetEncoding(1251));
+            sw.Write(post);
+            sw.Close();
+            
             return request;
         }
         public static void restoreHP(HttpRequest request)
@@ -59,5 +60,22 @@ namespace RoswarHelper
             return goldLeft;
         }
 
+        public static string goToPatrol(HttpRequest request, int time)
+        {
+            string status = "";
+            request.AddHeader("X-Requested-With", "XMLHttpRequest");
+            string post = request.Post("http://www.roswar.ru/alley/", "action=patrol&region=2&time=" + time + "&__ajax=1&return_url=/alley/", "application/x-www-form-urlencoded").ToString();
+
+            StreamWriter sw = new StreamWriter("D:\\1\\patrol.txt", true, System.Text.Encoding.GetEncoding(1251));
+            sw.Write(post);
+            sw.Close();
+
+            JObject returnStatusjObject = JObject.Parse(post);
+
+            status = returnStatusjObject["return_url"].ToString();
+
+            return status;
+        }
+        
     }
 }

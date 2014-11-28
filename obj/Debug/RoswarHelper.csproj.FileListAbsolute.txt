@@ -28,3 +28,5 @@ C:\Users\s.o.kravchenko\Documents\GitHub\RoswarHelper\obj\Debug\RoswarHelper.csp
 D:\Git\RoswarHelper\bin\Debug\xNet.dll
 D:\Git\RoswarHelper\bin\Debug\Newtonsoft.Json.dll
 D:\Git\RoswarHelper\bin\Debug\Newtonsoft.Json.xml
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswarHelper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswarHelper\bin\Debug\Newtonsoft.Json.xml

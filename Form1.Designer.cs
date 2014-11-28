@@ -31,6 +31,8 @@
             this.loadListBtn = new System.Windows.Forms.Button();
             this.usersList = new System.Windows.Forms.ListBox();
             this.groupBox = new System.Windows.Forms.GroupBox();
+            this.spendGold_25 = new System.Windows.Forms.Button();
+            this.spendGold_75 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.await_label = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,8 +41,7 @@
             this.name_label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.testBtn = new System.Windows.Forms.Button();
-            this.spendGold_75 = new System.Windows.Forms.Button();
-            this.spendGold_25 = new System.Windows.Forms.Button();
+            this.patrol_btn = new System.Windows.Forms.Button();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +66,7 @@
             // 
             // groupBox
             // 
+            this.groupBox.Controls.Add(this.patrol_btn);
             this.groupBox.Controls.Add(this.spendGold_25);
             this.groupBox.Controls.Add(this.spendGold_75);
             this.groupBox.Controls.Add(this.textBox1);
@@ -81,6 +83,26 @@
             this.groupBox.TabIndex = 2;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Info";
+            // 
+            // spendGold_25
+            // 
+            this.spendGold_25.Location = new System.Drawing.Point(6, 128);
+            this.spendGold_25.Name = "spendGold_25";
+            this.spendGold_25.Size = new System.Drawing.Size(121, 23);
+            this.spendGold_25.TabIndex = 9;
+            this.spendGold_25.Text = "Тратить золото (25)";
+            this.spendGold_25.UseVisualStyleBackColor = true;
+            this.spendGold_25.Click += new System.EventHandler(this.spendGold_25_Click);
+            // 
+            // spendGold_75
+            // 
+            this.spendGold_75.Location = new System.Drawing.Point(6, 157);
+            this.spendGold_75.Name = "spendGold_75";
+            this.spendGold_75.Size = new System.Drawing.Size(121, 23);
+            this.spendGold_75.TabIndex = 8;
+            this.spendGold_75.Text = "Тратить золото (75)";
+            this.spendGold_75.UseVisualStyleBackColor = true;
+            this.spendGold_75.Click += new System.EventHandler(this.spendGold_75_Click);
             // 
             // textBox1
             // 
@@ -151,25 +173,15 @@
             this.testBtn.UseVisualStyleBackColor = true;
             this.testBtn.Click += new System.EventHandler(this.testBtn_Click);
             // 
-            // spendGold_75
+            // patrol_btn
             // 
-            this.spendGold_75.Location = new System.Drawing.Point(6, 157);
-            this.spendGold_75.Name = "spendGold_75";
-            this.spendGold_75.Size = new System.Drawing.Size(121, 23);
-            this.spendGold_75.TabIndex = 8;
-            this.spendGold_75.Text = "Тратить золото (75)";
-            this.spendGold_75.UseVisualStyleBackColor = true;
-            this.spendGold_75.Click += new System.EventHandler(this.spendGold_75_Click);
-            // 
-            // spendGold_25
-            // 
-            this.spendGold_25.Location = new System.Drawing.Point(6, 128);
-            this.spendGold_25.Name = "spendGold_25";
-            this.spendGold_25.Size = new System.Drawing.Size(121, 23);
-            this.spendGold_25.TabIndex = 9;
-            this.spendGold_25.Text = "Тратить золото (25)";
-            this.spendGold_25.UseVisualStyleBackColor = true;
-            this.spendGold_25.Click += new System.EventHandler(this.spendGold_25_Click);
+            this.patrol_btn.Location = new System.Drawing.Point(6, 186);
+            this.patrol_btn.Name = "patrol_btn";
+            this.patrol_btn.Size = new System.Drawing.Size(121, 23);
+            this.patrol_btn.TabIndex = 10;
+            this.patrol_btn.Text = "Патруль (40)";
+            this.patrol_btn.UseVisualStyleBackColor = true;
+            this.patrol_btn.Click += new System.EventHandler(this.patrol_btn_Click);
             // 
             // Form1
             // 
@@ -201,6 +213,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button spendGold_25;
         private System.Windows.Forms.Button spendGold_75;
+        private System.Windows.Forms.Button patrol_btn;
     }
 }
 

@@ -49,6 +49,13 @@ namespace RoswarHelper
 
             MessageBox.Show("Трата золота окончена");
         }
+
+        public static void patrol(int index, int time)
+        {
+            string s = Requests.goToPatrol(req, time);
+            MessageBox.Show(s);
+        }
+
         public static void showInfo()
         {
         }
