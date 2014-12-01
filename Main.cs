@@ -14,10 +14,11 @@ namespace RoswarHelper
     public class Main
     {
         public static HttpRequest req;
-        public static void mainWork(int userIndex, string login, string pass, string proxy)
+
+        
+        public static void mainWork(int userIndex, string login, string pass, MyProxy proxy)
         {
             req = Requests.Auth(login, pass, proxy);
-            //MessageBox.Show(acc.ToString());
         }
         public static void selectedAcc(int index)
         {

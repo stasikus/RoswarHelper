@@ -12,13 +12,22 @@ namespace RoswarHelper
 {
     class Requests
     {
-        public static HttpRequest Auth(string login, string pass, string proxy)
+        public static HttpRequest Auth(string login, string pass, MyProxy proxy)
         {
             var request = new HttpRequest();
-            request.Proxy = HttpProxyClient.Parse(proxy);
+
+            switch (proxy.myProxyType)
+            {
+                case MyProxy.ProxyTypes.HTTP: request.Proxy = HttpProxyClient.Parse(proxy.adress_port); break;
+                case MyProxy.ProxyTypes.Socks4: request.Proxy = Socks4ProxyClient.Parse(proxy.adress_port); break;
+                case MyProxy.ProxyTypes.Socks5: request.Proxy = Socks5ProxyClient.Parse(proxy.adress_port); break;
+            }
+
+            //request.Proxy = HttpProxyClient.Parse(proxy);
             request.UserAgent = HttpHelper.ChromeUserAgent();
             request.Cookies = new CookieDictionary();
             string post = request.Post("http://www.roswar.ru/login/", "action=login&email=" + System.Web.HttpUtility.UrlEncode(login) + "&password=" + System.Web.HttpUtility.UrlEncode(pass, Encoding.GetEncoding(1251)) + "&remember=on", "application/x-www-form-urlencoded").ToString();
+ 
 
             StreamWriter sw = new StreamWriter("D:\\1\\1_" + login + ".txt", true, System.Text.Encoding.GetEncoding(1251));
             sw.Write(post);

@@ -37,6 +37,7 @@ namespace RoswarHelper
         {
           // 
           //  {
+                MyProxy p = new MyProxy("36.250.74.88:80", MyProxy.ProxyTypes.HTTP); 
                 String pathLocation = String.Empty;
                 OpenFileDialog frm = new OpenFileDialog();
                 frm.InitializeLifetimeService();
@@ -59,7 +60,7 @@ namespace RoswarHelper
                 for (int i = 0; i < LoadList.userDictionary.Count; i++)
                 {
                     usersList.Items.Add(LoadList.userDictionary.ElementAt(i).Key);
-                    Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value, proxyList[0]);
+                    Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value, p);
                     //Thread th = new Thread(() => Main.mainWork(i, LoadList.userDictionary.ElementAt(i).Key, LoadList.userDictionary.ElementAt(i).Value, proxyList[i]));
                     //th.IsBackground = true;
                     //th.SetApartmentState(ApartmentState.MTA);
