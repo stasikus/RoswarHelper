@@ -15,7 +15,7 @@ namespace RoswarHelper
         public static HttpRequest Auth(string login, string pass, string proxy)
         {
             var request = new HttpRequest();
-            request.Proxy = HttpProxyClient.Parse(proxy);
+            //request.Proxy = HttpProxyClient.Parse(proxy);
             request.UserAgent = HttpHelper.ChromeUserAgent();
             request.Cookies = new CookieDictionary();
             string post = request.Post("http://www.roswar.ru/login/", "action=login&email=" + System.Web.HttpUtility.UrlEncode(login) + "&password=" + System.Web.HttpUtility.UrlEncode(pass, Encoding.GetEncoding(1251)) + "&remember=on", "application/x-www-form-urlencoded").ToString();
